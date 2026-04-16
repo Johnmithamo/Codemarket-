@@ -15,6 +15,9 @@ import Profile from './components/profile_page';
 import Profile1 from './components/profile_page1';
 import Account1 from './components/account_creation';
 import Favorites from "./components/favorite_page"; 
+import Policy from "./components/privacy_policy"; 
+import Terms from "./components/terms_of_use"; 
+import About from "./components/about"; 
 
 function App() {
   return (
@@ -36,6 +39,9 @@ function App() {
         <Route path="/Profile1" element={ <Protected> <Profile1 /> </Protected> }/>
         <Route path="/creation1" element={ <Protected> <Account1 /> </Protected> }/>
         <Route path="/favorite" element={ <Protected> <Favorites /> </Protected> }/>
+        <Route path="/policy" element={ <Protected> <Policy /> </Protected> }/>
+        <Route path="/terms" element={ <Protected> <Terms /> </Protected> }/>
+        <Route path="/about" element={ <Protected> <About /> </Protected> }/>
       </Routes>
     </div>
   );

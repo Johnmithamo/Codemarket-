@@ -18,8 +18,8 @@ export default function SideNav({ isOpen, onClose }) {
   const navItems = [
     { label: "Home", icon: <Home size={20} className="text-blue-500" />, path: "/home" },
     { label: "Settings", icon: <Settings size={20} className="text-green-500" />, path: "/settings" },
-    { label: "Privacy Policy", icon: <Shield size={20} className="text-purple-500" />, url: "https://privacy-policys.onrender.com/" },
-    { label: "Terms & Conditions", icon: <FileText size={20} className="text-yellow-500" />, url: "https://example.com/terms" },
+    { label: "Privacy Policy", icon: <Shield size={20} className="text-purple-500" />, path: "/policy" },
+    { label: "Terms & Conditions", icon: <FileText size={20} className="text-yellow-500" />, path: "/terms" },
     { label: "Profile", icon: <User size={20} className="text-pink-500" />, path: "/profile" },
     { label: "About", icon: <Info size={20} className="text-cyan-500" />, path: "/about" },
   ];
