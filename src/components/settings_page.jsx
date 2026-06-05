@@ -26,13 +26,13 @@ export default function App() {
   if (!token) return;
 
   if (page === "settings" || page === "profile") {
-    axios.get("https://movie-nova-3.onrender.com/profile",  { headers: { Authorization: `Bearer ${token}` } })
+    axios.get("https://movie-nova-4.onrender.com/profile",  { headers: { Authorization: `Bearer ${token}` } })
       .then(res => setProfileData(res.data.profile))
       .catch(err => console.error(err));
   }
 
   if (page === "notifications") {
-    axios.get("https://movie-nova-3.onrender.com/user/notifications", { headers: { Authorization: `Bearer ${token}` } })
+    axios.get("https://movie-nova-4.onrender.com/user/notifications", { headers: { Authorization: `Bearer ${token}` } })
       .then(res => setNotificationsData(res.data))
       .catch(err => console.error(err));
   }
@@ -40,7 +40,7 @@ export default function App() {
   if (page === "payments") {
   setLoading(true);
 
-  axios.get("https://movie-nova-3.onrender.com/user/payments", {
+  axios.get("https://movie-nova-4.onrender.com/user/payments", {
     headers: { Authorization: `Bearer ${token}` }
   })
   .then(res => setPaymentsData(res.data))
@@ -49,13 +49,13 @@ export default function App() {
   }
 
   if (page === "privacy") {
-    axios.get("https://movie-nova-3.onrender.com/user/privacy", { headers: { Authorization: `Bearer ${token}` } })
+    axios.get("https://movie-nova-4.onrender.com/user/privacy", { headers: { Authorization: `Bearer ${token}` } })
       .then(res => setPrivacyData(res.data))
       .catch(err => console.error(err));
   }
 
   if (page === "help") {
-    axios.get("https://movie-nova-3.onrender.com/help/faq", { headers: { Authorization: `Bearer ${token}` } })
+    axios.get("https://movie-nova-4.onrender.com/help/faq", { headers: { Authorization: `Bearer ${token}` } })
       .then(res => setHelpData({ faq: res.data }))
       .catch(err => console.error(err));
   }
@@ -149,7 +149,7 @@ export default function App() {
             placeholder="Phone"
           />
           <button className="w-full bg-blue-500 text-white py-2 rounded-lg"
-            onClick={() => axios.put("https://movie-nova-3.onrender.com/user/profile", profileData, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } })}>
+            onClick={() => axios.put("https://movie-nova-4.onrender.com/user/profile", profileData, { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } })}>
             Save Changes
           </button>
         </div>
@@ -218,11 +218,11 @@ export default function App() {
       <div className="bg-gray-100 min-h-screen max-w-md mx-auto p-4">
         <BackHeader title="Privacy" />
         <div className="bg-white p-4 rounded-xl shadow space-y-3">
-          <button className="w-full text-left" onClick={() => axios.post("https://movie-nova-3.onrender.com/user/change-password")}>Change Password</button>
+          <button className="w-full text-left" onClick={() => axios.post("https://movie-nova-4.onrender.com/user/change-password")}>Change Password</button>
           <button className="w-full text-left" onClick={() => setPrivacyData(prev => ({ ...prev, twoFA: !prev.twoFA }))}>
             {privacyData.twoFA ? "Disable 2FA" : "Enable 2FA"}
           </button>
-          <button className="w-full text-left text-red-500" onClick={() => axios.post("https://movie-nova-3.onrender.com/user/delete-account")}>Delete Account</button>
+          <button className="w-full text-left text-red-500" onClick={() => axios.post("https://movie-nova-4.onrender.com/user/delete-account")}>Delete Account</button>
         </div>
       </div>
     );
