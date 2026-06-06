@@ -17,7 +17,7 @@ export default function BuyerAccountCreation() {
     const token = localStorage.getItem("token");
     if (!token) return;
 
-    fetch("https://movie-nova-4.onrender.com/profile", {
+    fetch("https://movie-nova-5.onrender.com/profile", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(res => res.json())
